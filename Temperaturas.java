@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Temperaturas {
-	double tc, tf, tk; 
 
 	public static void pularLinha() {
 		System.out.println(" ");
@@ -9,12 +8,12 @@ public class Temperaturas {
 
 	public static void BoasVindas() {
 		System.out.println(" ");
-		System.out.println("                 -=[ Conversor de Temperaturas ]=-                 "); 
-		System.out.println("           __________________________________________________    "); 
+		System.out.println("                 -=[ Conversor de Temperaturas ]=-                 ");
+		System.out.println("           __________________________________________________    ");
 		System.out.println("    ____.-\"\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\":\"-. ");
 		System.out.println("   (___:====\'===\'===\'===\'===\'===\'===\'=A \'   \'   \'   \'   \'   \'   )");
 		System.out.println("       `\'-._92____94____96____8__|_100____2_____4_____6_____8.-` ");
-		System.out.println(" "); 
+		System.out.println(" ");
 	}
 
 	public static void opcoesEscalas() {
@@ -31,7 +30,6 @@ public class Temperaturas {
 	public static void opcaoInvalida() {
 		System.out.println("Opção inválida. Forneça o número correspondente a uma das opções acima.");
 	}
-
 
 	public static void Resultado(double temperatura, int escala) {
 		if (escala == 1) {
@@ -61,7 +59,7 @@ public class Temperaturas {
 	}
 
 	public static double FahrenheitKelvin(double tf) {
-		return (tf - 32.) * (5./9.) + 273.; 
+		return (tf - 32.) * (5./9.) + 273.;
 	}
 
 	public static double KelvinCelsius(double tk) {
@@ -73,15 +71,13 @@ public class Temperaturas {
 	}
 
 	public static void main(String[] args) {
-		double tc, tf, tk;
-		double temperaturaentrada, temperaturasaida;
+		double temperaturaentrada;
 		int escalaentrada, escalasaida;
 		Scanner ler = new Scanner(System.in);
 
 		BoasVindas();
 
-		char continuar = 's'; 
-
+		char continuar = 's';
 		while (continuar == 's') {
 
 			pularLinha();
@@ -97,7 +93,7 @@ public class Temperaturas {
 			System.out.println("Para qual escala a temperatura será convertida?");
 			opcoesEscalas();
 			escalasaida = ler.nextInt();
-	
+
 			if (escalaentrada == 1) {
 				if (escalasaida == 1) {
 					escalasIguais();
@@ -141,7 +137,7 @@ public class Temperaturas {
 				}
 			}
 			pularLinha();
-			System.out.println("Gostaria de fazer uma nova conversão?"); 
+			System.out.println("Gostaria de fazer uma nova conversão?");
 			System.out.print("(s) sim; (n) não: ");
 			continuar = ler.next().charAt(0);
 		}
